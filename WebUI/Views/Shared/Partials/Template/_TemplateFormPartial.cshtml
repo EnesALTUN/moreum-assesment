@@ -1,0 +1,23 @@
+﻿@model Entities.Dto.InvoiceTempateFormDto
+
+<div class="d-flex justify-content-center">
+@using(Html.BeginForm("CreateDocument", "Home", null, FormMethod.Post, true, new { Id="create-template-form", enctype="multipart/form-data"}))
+{
+    Html.AntiForgeryToken();
+    Html.ValidationSummary(true, "", new { @class = "text-danger" });
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.CsvFile, "CSV File: ", new { @class="form-label" })
+        @Html.TextBoxFor(model => model.CsvFile, "", new { type = "file", accept=".csv"})
+        @Html.ValidationMessageFor(model => model.TemplateFile, "", new { @style = "color:red", @data_valmsg_for=nameof(Model.CsvFile) })
+    </div>
+    
+    <div class="mb-3">
+        @Html.LabelFor(model => model.TemplateFile, "Template File: ", new { @class="form-label" })
+        @Html.TextBoxFor(model => model.TemplateFile, "", new { type = "file", accept=".txt" })
+        @Html.ValidationMessageFor(model => model.TemplateFile, "", new { @style = "color:red", @data_valmsg_for=nameof(Model.TemplateFile) })
+    </div>
+    
+    <button id="create-btn" class="btn btn-primary w-100 waves-effect waves-float waves-light" tabindex="4">Oluştur</button>
+}
+</div>

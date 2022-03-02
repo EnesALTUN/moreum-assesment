@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="text-center">
+    <h3 class="display-5">Basic document generator with template support.</h3>
+</div>
+
+@await Html.PartialAsync("Partials/Template/_TemplateFormPartial")
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

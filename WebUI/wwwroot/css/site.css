@@ -1,0 +1,51 @@
+*{
+  outline: 0;
+}
+
+.form-control:focus{
+  box-shadow: none !important;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#create-template-form {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  max-width: 400px;
+}
+
+#create-template-form label {
+  width: 110px;
+  font-weight: bold;
+}
+
+.field-validation-error {
+  display: block;
+}
+
+.alert {
+  position: absolute;
+  right: 20px;
+  width: 300px;
+  height: auto;
+}
